@@ -113,7 +113,7 @@ function App() {
                     <input type="email" className="form-control rounded-4" id="emailInput" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                   <button className="btn btn-dark rounded-4 mt-4" type="button" onClick={handleSubmit}>Generate</button>
-                  {submit && <><p className='text-light fw-bold fs-4 font-weight-bold mt-3' style={{fontSize:"20px; font"}}>Request Submitted</p></>}
+                  {submit && <><p className='text-dark fw-bold fs-4 font-weight-bold mt-3' style={{fontSize:"20px; font"}}>Request Submitted</p></>}
                 </form>
 
 
@@ -132,7 +132,7 @@ function App() {
 <div className='mt-5'>
       <h3 className='text-center mb-4' style={{ color: 'black' }}>
 
-      <TypeAnimation className="text-light fw-bold"
+      <TypeAnimation className="text-dark fw-bold"
           sequence={[
             'Sample ', // Types 'One'
             2000, // Waits 1s
