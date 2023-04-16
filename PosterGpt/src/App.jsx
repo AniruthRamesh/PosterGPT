@@ -9,9 +9,11 @@ import axios from "axios"
 function App() {
   const [house,setHouse] = useState("")
   const [vibe,setVibe] = useState("")
-  const [anime,setAnime] = useState("")
+  const [character,setCharacter] = useState("")
   const [prompt,setPrompt] = useState("")
   const [email,setEmail] = useState("")
+  const [toggle,setToggle] = useState(false)
+
 
   const handleVibe = (option)=>{
    setVibe(option) 
@@ -21,12 +23,19 @@ function App() {
     setHouse(option) 
    }
 
-   const handleAnime = (option)=>{
-    setAnime(option) 
+   const handleSubmit = async ()=>{
+
+    
+    const response = await axios.post("http://localhost:4000/api/prompts",{})
    }
 
-   const handleSubmit = async ()=>{
-    const response = await axios.post("http://localhost:4000/api/prompts",{})
+   const handleToggle = ()=>{
+    setToggle(true)
+   }
+
+   const handleSave = ()=>{
+    setToggle(false)
+
    }
 
   return (
@@ -81,16 +90,10 @@ function App() {
                 </div>
 
                 <div className="col-4">
-                <div class="dropup-center dropup">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Anime
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" onClick={()=>handleAnime("Naruto")}>Naruto</a></li>
-                    <li><a class="dropdown-item" href="#" onClick={()=>handleAnime("Ichigo")}>Ichigo</a></li>
-                    <li><a class="dropdown-item" href="#" onClick={()=>handleAnime("Eren Yeager")}>Eren Yeager</a></li>
-                  </ul>
-                </div>
+                {!toggle && <button className='btn btn-dark rounded-3' onClick={handleToggle}>Character</button>}
+                {toggle && <>
+                            <input type="form" onChange={(e)=>setCharacter(e.target.value)}/><button className='btn btn-dark rounded-3 mt-1' onClick={handleSave}>save</button>
+                          </>}
                 </div>
 
               </div>
@@ -104,7 +107,7 @@ function App() {
                     <label htmlFor="emailInput" style={{color:"white"}}>Email</label>
                     <input type="email" className="form-control rounded-4" id="emailInput" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
-                  <button className="btn btn-light rounded-4 mt-4" type="button" onClick={handleSubmit}>Generate</button>
+                  <button className="btn btn-dark rounded-4 mt-4" type="button" onClick={handleSubmit}>Generate</button>
                 </form>
 
 
