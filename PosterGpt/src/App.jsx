@@ -105,11 +105,11 @@ function App() {
 
                 <form>
                   <div className="form-group mt-4">
-                    <label htmlFor="promptInput text-light" style={{color:"black"}}>Prompt</label>
-                    <input type="text" className="form-control rounded-4" id="promptInput" placeholder="Lofi Naruto in futuristic Shinobi Village" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
+                    <label htmlFor="promptInput text-light" style={{color:"white"}}>Prompt</label>
+                    <input type="text" className="form-control rounded-4" id="promptInput" placeholder="Enter Promp:Lofi Naruto in futuristic Shinobi Village" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
                   </div>
                   <div className="form-group mt-4">
-                    <label htmlFor="emailInput" style={{color:"black"}}>Email</label>
+                    <label htmlFor="emailInput" style={{color:"white"}}>Email</label>
                     <input type="email" className="form-control rounded-4" id="emailInput" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                   <button className="btn btn-dark rounded-4 mt-4" type="button" onClick={handleSubmit}>Generate</button>
