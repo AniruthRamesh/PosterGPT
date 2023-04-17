@@ -105,11 +105,11 @@ function App() {
 
                 <form>
                   <div className="form-group mt-4">
-                    <label htmlFor="promptInput text-light" style={{color:"white"}}>Prompt</label>
+                    <label htmlFor="promptInput text-light" style={{color:"black"}}>Prompt</label>
                     <input type="text" className="form-control rounded-4" id="promptInput" placeholder="Lofi Naruto in futuristic Shinobi Village" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
                   </div>
                   <div className="form-group mt-4">
-                    <label htmlFor="emailInput" style={{color:"white"}}>Email</label>
+                    <label htmlFor="emailInput" style={{color:"black"}}>Email</label>
                     <input type="email" className="form-control rounded-4" id="emailInput" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                   <button className="btn btn-dark rounded-4 mt-4" type="button" onClick={handleSubmit}>Generate</button>
@@ -132,20 +132,7 @@ function App() {
 <div className='mt-5'>
       <h3 className='text-center mb-4' style={{ color: 'black' }}>
 
-      <TypeAnimation className="text-dark fw-bold"
-          sequence={[
-            'Sample ', // Types 'One'
-            2000, // Waits 1s
-            '', // Deletes 'One' and types 'Two'
-            () => {
-              console.log('Sequence completed'); // Place optional callbacks anywhere in the array
-            }
-          ]}
-          wrapper="span"
-          cursor={true}
-          repeat={Infinity}
-          style={{ fontSize: '0.8em', display: 'inline-block',fontFamily:"Courier New", }}
-        />
+      Sample Posters
 
       </h3>
       <div className="row mt-5 d-flex flex-row justify-content-center align-items-center">
